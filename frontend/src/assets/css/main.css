@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg-primary: #f0f7ff;
+  --bg-card: #ffffff;
+  --bg-secondary: #e3f2fd;
+  --bg-panel: #fff0f5;
+  --primary-blue: #4fc3f7;
+  --primary-blue-hover: #29b6f6;
+  --accent-pink: #ff80ab;
+  --accent-pink-hover: #ff4081;
+  
+  /* Text and borders */
+  --text-main: #2c3e50;
+  --text-muted: #78909c;
+  --text-primary: #2c3e50;
+  --text-secondary: #78909c;
+  --border-color: #e0e0e0;
+  
+  --bg-gradient: linear-gradient(135deg, #e1f5fe 0%, #fce4ec 100%);
+  --glass-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --glass-blur: blur(8px);
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--bg-primary);
+  background-image: var(--bg-gradient);
+  background-attachment: fixed;
+  color: var(--text-main);
+  min-height: 100vh;
+}
+
+/* Redefine text-white helper to fit Light Mode pastel theme */
+.text-white {
+  color: var(--text-main) !important;
+}
+
+/* Glassmorphism/Card panel styling for Light Mode */
+.glass-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  box-shadow: var(--glass-shadow);
+}
+
+/* Custom Table styling for Light Mode */
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--text-main);
+}
+
+.custom-table th {
+  background-color: var(--bg-secondary);
+  border-bottom: 2px solid var(--border-color);
+  color: var(--text-main);
+  font-weight: 600;
+  padding: 14px;
+  text-align: left;
+}
+
+.custom-table td {
+  padding: 14px;
+  border-bottom: 1px solid var(--border-color);
+  vertical-align: middle;
+  color: var(--text-main);
+}
+
+.custom-table tr:hover {
+  background-color: rgba(79, 195, 247, 0.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Custom buttons for Light Mode */
+.btn-glass {
+  background: var(--primary-blue);
+  border: 1px solid var(--primary-blue);
+  color: #fff !important;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.btn-glass:hover {
+  background: var(--primary-blue-hover);
+  border-color: var(--primary-blue-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(41, 182, 246, 0.25);
+}
+
+.btn-glass-danger {
+  background: var(--accent-pink);
+  border: 1px solid var(--accent-pink);
+  color: #fff !important;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.btn-glass-danger:hover {
+  background: var(--accent-pink-hover);
+  border-color: var(--accent-pink-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 64, 129, 0.25);
+}
+
+.btn-glass-success {
+  background: #26a69a;
+  border: 1px solid #26a69a;
+  color: #fff !important;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.btn-glass-success:hover {
+  background: #00897b;
+  border-color: #00897b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 137, 123, 0.25);
+}
+
+.badge-status {
+  padding: 6px 12px;
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.badge-status.pending {
+  background-color: #fff9c4;
+  color: #f57f17;
+  border: 1px solid #fff59d;
+}
+
+.badge-status.active {
+  background-color: var(--bg-secondary);
+  color: #0288d1;
+  border: 1px solid #b3e5fc;
+}
+
+.badge-status.returned {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #c8e6c9;
+}
+
+.badge-status.rejected {
+  background-color: #ffebee;
+  color: #c62828;
+  border: 1px solid #ffcdd2;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--text-muted);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-main);
+}
+
+/* Override Bootstrap .container to stretch full width with minimal side padding (~1cm) */
+.content-body .container,
+.content-body .container-fluid {
+  max-width: 100% !important;
+  width: 100% !important;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+
+/* Reduce excess top/bottom padding on page views */
+.content-body .py-5 {
+  padding-top: 1.5rem !important;
+  padding-bottom: 1.5rem !important;
+}
+
+/* ===== Badge Hạng Thành Viên ===== */
+.badge-rank-dong {
+  background: linear-gradient(135deg, #d4a574, #c08a5a);
+  color: #fff;
+  border: 1px solid #b07d4f;
+  font-size: 0.75rem;
+}
+
+.badge-rank-bac {
+  background: linear-gradient(135deg, #b8c6d4, #8fa3b5);
+  color: #fff;
+  border: 1px solid #7a94a8;
+  font-size: 0.75rem;
+}
+
+.badge-rank-vang {
+  background: linear-gradient(135deg, #f6d365, #fda085);
+  color: #fff;
+  border: 1px solid #e8b94a;
+  font-size: 0.75rem;
+  box-shadow: 0 2px 8px rgba(253, 160, 133, 0.35);
+}
+
+/* Progress bar cho điểm uy tín */
+.reputation-progress {
+  background: var(--bg-secondary);
+  border-radius: 10px;
+  height: 10px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.reputation-progress-bar {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.6s ease;
+}
+
+.progress-dong {
+  background: linear-gradient(90deg, #d4a574, #c08a5a);
+}
+
+.progress-bac {
+  background: linear-gradient(90deg, #b8c6d4, #8fa3b5);
+}
+
+.progress-vang {
+  background: linear-gradient(90deg, #f6d365, #fda085);
+}
+
+/* ===== TOAST CARD / ALERT NOTIFICATION STYLE ===== */
+.alert,
+.alert-custom,
+.alert-success-custom,
+.alert-danger-custom,
+.alert-toast,
+.toast {
+  background-color: #ffffff !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12) !important;
+  border-radius: 10px !important;
+  padding: 12px 20px !important;
+  margin-bottom: 10px !important;
+  color: #2c3e50 !important;
+  font-weight: 600 !important;
+  display: flex !important;
+  align-items: center !important;
+  border: none !important;
+}
+
+/* Success / Approve Alert */
+.alert-success-custom,
+.toast-success,
+.alert-success {
+  border-left: 5px solid #2ecc71 !important;
+}
+
+.alert-success-custom i,
+.toast-success i,
+.alert-success i {
+  color: #2ecc71 !important;
+  font-size: 1.1rem !important;
+}
+
+/* Error / Reject Alert */
+.alert-danger-custom,
+.toast-error,
+.toast-danger,
+.alert-danger {
+  border-left: 5px solid #e74c3c !important;
+}
+
+.alert-danger-custom i,
+.toast-error i,
+.toast-danger i,
+.alert-danger i {
+  color: #e74c3c !important;
+  font-size: 1.1rem !important;
+}
+
+/* Info / Warning Alert */
+.alert-info-custom,
+.toast-info,
+.alert-info,
+.alert-warning {
+  border-left: 5px solid #3498db !important;
+}
+
+.alert-info-custom i,
+.toast-info i,
+.alert-info i,
+.alert-warning i {
+  color: #3498db !important;
+  font-size: 1.1rem !important;
+}
